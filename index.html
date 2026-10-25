@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta name="description" content="SouthFlow — Old Stories. New Sound. Listen to මාතර කිඹුලා (NILWALA FLOW), a Sinhala drill and Southern Sri Lankan folk fusion track.">
+  <title>මාතර කිඹුලා (NILWALA FLOW) — SouthFlow</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09090b;
+      --panel: #121214;
+      --panel2: #19191d;
+      --text: #f5f2ed;
+      --muted: #aaa5a0;
+      --orange: #ff5a00;
+      --orange2: #ff8a38;
+      --line: rgba(255,255,255,.10);
+      --radius: 22px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(255,90,0,.14), transparent 34rem),
+        radial-gradient(ellipse at 0% 35%, rgba(255,90,0,.06), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(var(--max), calc(100% - 36px)); margin-inline: auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(9,9,11,.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:18px; min-height:76px; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:850; letter-spacing:.11em; }
+    .brand img { width:44px; height:44px; object-fit:cover; border-radius:50%; border:1px solid rgba(255,90,0,.5); }
+    .brand span { font-size: .96rem; }
+    .nav-links { display:flex; align-items:center; gap:22px; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:.9rem; }
+    .nav-links a:hover { color:var(--orange2); }
+    .pill { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:1px solid var(--line); border-radius:999px; padding:12px 18px; font-weight:750; text-decoration:none; transition:transform .18s ease, background .18s ease; }
+    .pill:hover { transform:translateY(-2px); }
+    .primary { background:var(--orange); border-color:var(--orange); color:#fff; }
+    .primary:hover { background:#e94f00; }
+    .secondary { background:rgba(255,255,255,.04); }
+    .hero { padding:64px 0 54px; }
+    .hero-grid { display:grid; grid-template-columns: .95fr 1.05fr; align-items:center; gap:clamp(28px, 6vw, 72px); }
+    .cover-shell { position:relative; max-width:500px; margin-inline:auto; }
+    .cover-shell:before { content:""; position:absolute; inset:12% -7% -6% 12%; background:var(--orange); filter:blur(70px); opacity:.18; z-index:-1; }
+    .cover { width:100%; aspect-ratio:1; object-fit:cover; border-radius:26px; border:1px solid rgba(255,255,255,.15); box-shadow:0 28px 90px rgba(0,0,0,.5); }
+    .eyebrow { display:inline-flex; gap:9px; align-items:center; color:var(--orange2); text-transform:uppercase; letter-spacing:.16em; font-size:.76rem; font-weight:850; }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--orange); box-shadow:0 0 15px var(--orange); }
+    h1 { font-size:clamp(2.3rem, 5.5vw, 4.9rem); line-height:1.03; letter-spacing:-.055em; margin:20px 0 18px; }
+    h1 .accent { color:var(--orange); display:block; }
+    .intro { color:#c2bdb7; font-size:1.06rem; max-width:570px; }
+    .meta { display:flex; flex-wrap:wrap; gap:9px; margin:24px 0 28px; }
+    .tag { padding:7px 11px; background:rgba(255,255,255,.055); border:1px solid var(--line); color:#d7d2cd; border-radius:999px; font-size:.8rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .audio-card { margin-top:28px; background:rgba(18,18,20,.86); border:1px solid var(--line); border-radius:18px; padding:16px; }
+    .audio-label { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px; font-size:.82rem; color:var(--muted); }
+    audio { width:100%; height:42px; accent-color:var(--orange); }
+    .section { padding:38px 0 66px; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:18px; margin-bottom:24px; }
+    .section-head h2 { font-size:clamp(1.7rem, 3vw, 2.5rem); letter-spacing:-.04em; margin:8px 0 0; }
+    .section-head p { color:var(--muted); margin:0; max-width:470px; }
+    .about-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:18px; }
+    .card { background:linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.02)); border:1px solid var(--line); border-radius:var(--radius); padding:24px; }
+    .card h3 { margin:0 0 12px; font-size:1.1rem; }
+    .card p { margin:0; color:#c3beb8; }
+    .facts { display:grid; gap:14px; }
+    .fact { display:flex; gap:12px; align-items:flex-start; }
+    .fact-icon { display:grid; place-items:center; width:38px; height:38px; flex:0 0 38px; border-radius:12px; background:rgba(255,90,0,.12); }
+    .fact small { color:var(--muted); display:block; }
+    .fact strong { font-size:.95rem; }
+    .lyrics-box { background:rgba(18,18,20,.86); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+    .lyrics-top { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:18px 22px; border-bottom:1px solid var(--line); }
+    .lyrics-top h3 { margin:0; font-size:1rem; }
+    .lyrics-content { padding:clamp(20px, 4vw, 38px); max-width:820px; margin:auto; }
+    .lyric-section { padding:0 0 25px; margin-bottom:25px; border-bottom:1px solid var(--line); }
+    .lyric-section:last-child { border:0; margin:0; padding:0; }
+    .lyric-section h4 { color:var(--orange2); font-size:.76rem; letter-spacing:.14em; margin:0 0 12px; text-transform:uppercase; }
+    .lyric-section p { white-space:pre-line; margin:0; color:#e5e0da; line-height:2; font-size:1.02rem; }
+    .copy-btn { cursor:pointer; color:var(--text); background:rgba(255,255,255,.06); border:1px solid var(--line); border-radius:999px; padding:9px 13px; font:inherit; font-size:.82rem; }
+    .copy-btn:hover { border-color:rgba(255,90,0,.65); }
+    .cta { display:flex; justify-content:space-between; align-items:center; gap:22px; background:linear-gradient(105deg, rgba(255,90,0,.18), rgba(255,255,255,.035)); border:1px solid rgba(255,90,0,.24); border-radius:var(--radius); padding:clamp(22px, 4vw, 36px); }
+    .cta h2 { margin:0 0 7px; font-size:clamp(1.45rem, 3vw, 2.2rem); }
+    .cta p { margin:0; color:#c7c0b9; }
+    footer { border-top:1px solid var(--line); padding:28px 0 38px; color:var(--muted); font-size:.85rem; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .footer-brand { display:flex; gap:10px; align-items:center; color:var(--text); font-weight:850; letter-spacing:.1em; }
+    .footer-brand img { width:32px; height:32px; border-radius:50%; }
+    .social { display:flex; flex-wrap:wrap; gap:16px; }
+    .social a { text-decoration:none; }
+    .social a:hover { color:var(--orange2); }
+    @media (max-width:760px) {
+      .wrap { width:min(var(--max), calc(100% - 26px)); }
+      .nav-inner { min-height:66px; }
+      .brand img { width:38px; height:38px; }
+      .nav-links { gap:12px; }
+      .nav-links a { font-size:.82rem; }
+      .nav-links .hide-mobile { display:none; }
+      .hero { padding-top:35px; }
+      .hero-grid, .about-grid { grid-template-columns:1fr; }
+      .cover-shell { max-width:420px; width:100%; }
+      .hero-copy { order:-1; }
+      .hero-copy h1 { margin-top:14px; }
+      .section { padding:28px 0 48px; }
+      .section-head { align-items:flex-start; flex-direction:column; }
+      .cta { align-items:flex-start; flex-direction:column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="SouthFlow home">
+        <img src="https://arkx.nhubx.com/musics/South%20Flow_%20Sunset%20Sound%20Emblem.png" alt="SouthFlow logo">
+        <span>SOUTH FLOW</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about" class="hide-mobile">About</a>
+        <a href="#lyrics">Lyrics</a>
+        <a href="#listen" class="pill primary">▶ Listen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="cover-shell">
+          <img class="cover" src="https://arkx.nhubx.com/musics/Nilwala%20Flow_%20Southern%20Sri%20Lanka%20Drill%20Rap.png" alt="මාතර කිඹුලා (NILWALA FLOW) cover artwork">
+        </div>
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dot"></span> Southern Sri Lankan Drill</div>
+          <h1>මාතර කිඹුලා <span class="accent">NILWALA FLOW</span></h1>
+          <p class="intro">An old Southern Sri Lankan folk story brought into a new era with Sinhala drill, heavy 808s, powerful beats, and traditional Sri Lankan influences.</p>
+          <div class="meta">
+            <span class="tag">🎧 SouthFlow</span>
+            <span class="tag">🇱🇰 Sinhala Rap</span>
+            <span class="tag">🤖 AI-generated vocals</span>
+            <span class="tag">🌊 Matara · Nilwala River</span>
+          </div>
+          <div class="actions">
+            <a class="pill primary" href="#listen">▶ Play the track</a>
+            <a class="pill secondary" href="https://arkx.nhubx.com/musics/%E0%B6%B8%E0%B7%8F%E0%B6%AD%E0%B6%BB%20%E0%B6%9A%E0%B7%92%E0%B6%B9%E0%B7%94%E0%B6%BD%E0%B7%8F%20(NILWALA%20FLOW)%20-%20COVER.mp3" download="Mathara-Kimbula-Nilwala-Flow.mp3">↓ Download MP3</a>
+          </div>
+          <div class="audio-card" id="listen">
+            <div class="audio-label"><span>NOW PLAYING · SOUTH FLOW</span><span>Old Stories. New Sound.</span></div>
+            <audio controls preload="metadata" aria-label="Play මාතර කිඹුලා (NILWALA FLOW)">
+              <source src="https://arkx.nhubx.com/musics/%E0%B6%B8%E0%B7%8F%E0%B6%AD%E0%B6%BB%20%E0%B6%9A%E0%B7%92%E0%B%B9%E0%B7%94%E0%B6%BD%E0%B7%8F%20(NILWALA%20FLOW)%20-%20COVER.mp3" type="audio/mpeg">
+              Your browser does not support audio playback. Use the download link instead.
+            </audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">The story behind the sound</div><h2>Old stories. New sound.</h2></div>
+          <p>From the banks of the Nilwala River to a new generation of listeners — Southern folklore meets modern rhythm.</p>
+        </div>
+        <div class="about-grid">
+          <article class="card">
+            <h3>About this track</h3>
+            <p>“මාතර කිඹුලා (NILWALA FLOW)” takes inspiration from the old Matara crocodile folk story and the name of Angamana Sumana. Traditional Southern Sri Lankan imagery meets drill drums, deep 808 bass, and crowd-ready chants.</p>
+            <p style="margin-top:14px">This track features AI-generated vocals and AI-assisted music, created as a modern tribute to local folklore and culture.</p>
+          </article>
+          <aside class="card facts">
+            <div class="fact"><div class="fact-icon">🎤</div><div><small>Artist / Channel</small><strong>SouthFlow</strong></div></div>
+            <div class="fact"><div class="fact-icon">🌊</div><div><small>Inspired by</small><strong>Matara & the Nilwala River</strong></div></div>
+            <div class="fact"><div class="fact-icon">🎵</div><div><small>Genre</small><strong>Sinhala Drill Rap / Folk Fusion</strong></div></div>
+            <div class="fact"><div class="fact-icon">🤖</div><div><small>Vocals</small><strong>AI-generated</strong></div></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lyrics">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Sing along</div><h2>Lyrics <span style="color:var(--orange)">/ ගී පද</span></h2></div>
+          <p>The full lyrics to “මාතර කිඹුලා (NILWALA FLOW)”.</p>
+        </div>
+        <div class="lyrics-box">
+          <div class="lyrics-top">
+            <h3>මාතර කිඹුලා (NILWALA FLOW)</h3>
+            <button class="copy-btn" id="copyLyrics" type="button">Copy lyrics</button>
+          </div>
+          <div class="lyrics-content" id="lyricsText">
+            <section class="lyric-section"><h4>Intro</h4><p>නිල්වලා ගඟ ළඟ, මාතරේ රෑ
+පරණ කතාවක් අද නැවතත් ඇහේ
+අංගමන සුමනගේ නම හඬ නගා
+කොටියා නෙවෙයි—කිඹුලා එයි බලා</p></section>
+            <section class="lyric-section"><h4>Verse 1</h4><p>දකුණේ සුළඟේ ලුණු රස, ගඟේ දිය සීතල
+පාලම යට කතාවක්, හිතට එයි ගැඹුරට
+මාතරේ මිනිස්සු දන්නවා ඒ පැරණි සලකුණ
+වතුර මතුපිට නිහඬයි, යටින් තියෙයි කලබල
+
+සුමනගේ හඬ ගම්මැද්දේ යළිත් ඇසෙනවා
+රබානේ තාලෙට පරණ පද ඇවිලෙනවා
+කතා පොතෙන් පාරට, පාරෙන් වේදිකාවට
+දකුණේ නම ගෙනියනවා රැල්ලෙන් රැල්ලට</p></section>
+            <section class="lyric-section"><h4>Pre-Chorus</h4><p>ගඟ කියයි—අහන්න, අමතක කරන්න එපා
+පරම්පරාවෙන් ආ කතාව හිතේ තියා
+අත උස්සලා කියමු, එක හඬක් වෙලා
+මාතරේ නම අද රැව් දෙයි ලෝකෙ පුරා</p></section>
+            <section class="lyric-section"><h4>Chorus</h4><p>මාතරේ! (හේ!) නිල්වලා! (හේ!)
+පරණ කතාව අලුත් හඬක් වෙලා!
+සුමනේ! (හේ!) රබානේ! (හේ!)
+දකුණේ ගිනියම තාලයට නැගිලා!
+
+කිඹුලා ගඟේ—කතාව ගමේ
+අපි ඒ හඬ ගෙනියමු හැම තැනේ
+මාතරේ! (හේ!) නිල්වලා! (හේ!)
+පරණ කතාව අලුත් හඬක් වෙලා!</p></section>
+            <section class="lyric-section"><h4>Verse 2</h4><p>එක පදයක් පරණයි, අද ගැහෙන්නේ අලුත්
+පරම්පරා දෙකක් එකට, එකම රිද්මයක් තුළ
+රබානේ පහරට 808 එක උත්තර දෙයි
+ගඟ අයිනේ මතකය නගර මැදට ඇවිත් හිඳියි
+
+කවුරුත් අහලා තියෙයි, කවුරුත් කියලා තියෙයි
+කොහොමද මේ පරණ පද තවමත් ජීවත් වෙයි
+කතාවේ සෙවණැල්ල නොව—අපේ මුල් පෙන්වනවා
+දකුණේ හදවතෙන් හඬක් අද ඉහළ යනවා</p></section>
+            <section class="lyric-section"><h4>Beat Switch</h4><p>අහ්—තාලේ මාරුයි, හඬ තව බරයි
+ගඟේ දිය වගේ රැල්ල රැල්ල නැගෙයි
+අංගමන සුමන—නම ගමන් කරයි
+මාතරේ පදය අද හැම කනකම රැඳෙයි</p></section>
+            <section class="lyric-section"><h4>Chorus</h4><p>මාතරේ! (හේ!) නිල්වලා! (හේ!)
+පරණ කතාව අලුත් හඬක් වෙලා!
+සුමනේ! (හේ!) රබානේ! (හේ!)
+දකුණේ ගිනියම තාලයට නැගිලා!
+
+කිඹුලා ගඟේ—කතාව ගමේ
+අපි ඒ හඬ ගෙනියමු හැම තැනේ
+මාතරේ! (හේ!) නිල්වලා! (හේ!)
+පරණ කතාව අලුත් හඬක් වෙලා!</p></section>
+            <section class="lyric-section"><h4>Bridge</h4><p>ගඟේ හඬට කන් දෙන්න, පැරණි පදය මතකයි
+දකුණේ මිනිස්සුන්ගේ හදවතේ එය රැඳෙයි
+අද අපි කියන හඬ හෙටත් ගමන් කරයි
+මාතරේ කතාවට අලුත් පණ ලැබෙයි</p></section>
+            <section class="lyric-section"><h4>Final Chorus</h4><p>මාතරේ! (හේ!) නිල්වලා! (හේ!)
+පරණ කතාව අලුත් හඬක් වෙලා!
+සුමනේ! (හේ!) රබානේ! (හේ!)
+දකුණේ ගිනියම තාලයට නැගිලා!
+
+කිඹුලා ගඟේ—කතාව ගමේ
+අපි ඒ හඬ ගෙනියමු හැම තැනේ
+මාතරේ! (හේ!) නිල්වලා! (හේ!)
+දකුණේ කතාව සදා රැව් දෙයි!</p></section>
+            <section class="lyric-section"><h4>Outro</h4><p>නිල්වලා ගඟ ළඟ, පදය තවම ඇහේ
+මාතරේ කතාව—අපේ හඬේ රැඳේ</p></section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta">
+          <div><h2>Feel the flow. Share the story.</h2><p>If you enjoyed the track, support SouthFlow and share it with someone who loves Sinhala music.</p></div>
+          <a class="pill primary" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">▶ Find us on YouTube</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="footer-brand"><img src="https://arkx.nhubx.com/musics/South%20Flow_%20Sunset%20Sound%20Emblem.png" alt=""> SOUTH FLOW</div>
+        <div style="margin-top:8px">Old Stories. New Sound. 🇱🇰</div>
+      </div>
+      <div class="social">
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="#lyrics">Lyrics</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+      <div>© <span id="year"></span> SouthFlow</div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const copyButton = document.getElementById('copyLyrics');
+    copyButton.addEventListener('click', async () => {
+      const text = document.getElementById('lyricsText').innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        copyButton.textContent = 'Copied!';
+      } catch (e) {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+        copyButton.textContent = 'Copied!';
+      }
+      setTimeout(() => copyButton.textContent = 'Copy lyrics', 1800);
+    });
+  </script>
+</body>
+</html>
